@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,6 +18,14 @@
 		<div>
 			<h1 class="display-3 fw-bold mb-3">Login</h1>
 		</div>
+		<c:if test="${not empty message}">
+
+		<div class="alert alert-danger alert-dismissible fade show"
+			role="alert">${message}
+			<button type="button" class="btn-close" data-bs-dismiss="alert"
+				aria-label="Close"></button>
+		</div>
+		</c:if>
 
 		<form method="post" action="login">
 			<div class="mb-3">
