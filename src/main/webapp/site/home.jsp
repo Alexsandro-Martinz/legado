@@ -1,12 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<h1>Bem-vindo ${param.name}</h1>
-</body>
-</html>
+<%@ include file="/includes/header.jsp"%>
+
+<div class="text-center my-5">
+	<h1>Bem-vindo ${user.username}</h1>
+
+</div>
+
+<%@ include file="/includes/footer.jsp"%>
+

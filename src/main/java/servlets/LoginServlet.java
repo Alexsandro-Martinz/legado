@@ -12,13 +12,20 @@ import dtos.LoginDto;
 import dtos.UserDto;
 
 
-@WebServlet("/login")
+@WebServlet(urlPatterns = { "/login", "/" })
 public class LoginServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 	private LoginService service = new LoginService();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+		if(request.getSession().getAttribute("user") == null) {
+			request.getRequestDispatcher("index.jsp").forward(request, response);			
+		} else {
+			response.sendRedirect("/site/home.jsp");
+		}
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

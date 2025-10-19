@@ -2,16 +2,16 @@ package dtos;
 
 public class UserDto {
 
+	private Long id;
 	private String username;
-	private String password;
 
 	public UserDto() {
 	}
 
-	public UserDto(String username, String password) {
+	public UserDto(Long id, String username) {
 		super();
 		this.username = username;
-		this.password = password;
+		this.id = id;
 	}
 
 	public String getUsername() {
@@ -22,12 +22,17 @@ public class UserDto {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	@Override
+	public String toString() {
+		return "UserDto [id=" + id + ", username=" + username + "]";
 	}
 	
 }
